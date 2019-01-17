@@ -1,11 +1,11 @@
-function Write-Log
+function Write-FormattedLog
 {
     param (
         [ValidateNotNullOrEmpty()]
         [Alias("LogContent")]
         [string]$Message,
 
-        [ValidateSet("Error", "Warning", "Info", "Debug")]
+        [ValidateSet("Fatal", "Error", "Warning", "Info", "Debug")]
         $Level = "Debug"
     )
 
@@ -13,12 +13,15 @@ function Write-Log
 
     switch ($Level)
     {
+        "Fatal"
+        {
+            throw $Message
+        }
         "Error"
         {
             Write-Host "$date [E] $Message" -ForegroundColor Red
-            throw $Message
         }
-        "Warn"
+        "Warning"
         {
             Write-Host "$date [W] $Message" -ForegroundColor Yellow
         }
@@ -41,5 +44,5 @@ function Write-AccessLog
         [int]$StatusCode = 200
     )
 
-    Write-Log -Message "$Method $Path $StatusCode" -Level Info
+    Write-FormattedLog -Message "$Method $Path $StatusCode" -Level Info
 }
