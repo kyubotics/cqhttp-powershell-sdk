@@ -21,7 +21,7 @@ Update-Module -Name CQHttp # 更新
 Invoke-CQHttpBot `
     -ApiRoot "http://127.0.0.1:5700" `
     -Address "127.0.0.1:8080" `
-    -EventCallbacks @(,@("", { param($Bot, $Ctx) echo ($Context | ConvertTo-Json) }))
+    -EventCallbacks @(,@("", { param($Bot, $Ctx) echo ($Ctx | ConvertTo-Json) }))
 ```
 
 上面的命令会把收到的事件全部以 JSON 形式打印出来。其中，`-Address` 参数，如果要使用所有 IP，需要传入 `+:8080`。
