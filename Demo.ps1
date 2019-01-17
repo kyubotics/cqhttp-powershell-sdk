@@ -7,11 +7,7 @@ function MessageCallback
         [hashtable]$Context
     )
 
-    if ($Context.user_id -eq 1002647525)
-    {
-        $result = (& $Bot.Send -Context $Context -Message $Context.message)
-        Write-Host "Result: $($result.data)"
-    }
+    Write-Host "Received message: $($Context.message)"
 }
 
 function PrivateMessageCallback
@@ -21,12 +17,22 @@ function PrivateMessageCallback
         [hashtable]$Context
     )
 
-    Write-Host "wooooow"
+    $result = (& $Bot.Send -Context $Context -Message $Context.message)
+    if ($result.data.message_id)
+    {
+        Write-Host "Succeeded to repeat, message id: $($result.data.message_id)"
+    }
 }
 
 $callbacks = @(
     , @("message", $Function:MessageCallback)
     , @("message.private", $Function:PrivateMessageCallback)
+    , @("request.friend", {
+            param ($Bot, $Context)
+            & $Bot.CallAction `
+                -Action "set_friend_add_request" `
+                -Params @{flag = $Context.flag; approve = $true}
+        })
 )
 
 Invoke-CQHttpBot `
