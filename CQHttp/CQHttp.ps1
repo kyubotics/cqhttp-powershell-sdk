@@ -1,3 +1,5 @@
+. "$PSScriptRoot\Logging.ps1"
+
 class CQHttp
 {
     [string]$ApiRoot
@@ -105,4 +107,14 @@ class CQHttp
             -ContentType "application/json; charset=utf-8" `
             -Body $body
     }
+}
+
+function New-CQHttp
+{
+    param (
+        [string]$ApiRoot
+    )
+
+    $instance = New-Object CQHttp -Property @{ApiRoot = $ApiRoot.TrimEnd("/")}
+    return [CQHttp]$instance
 }
