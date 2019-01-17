@@ -12,7 +12,7 @@
 RootModule = 'CQHttp.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.1'
+ModuleVersion = '0.0.2'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -69,7 +69,7 @@ PowerShellVersion = '3.0'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Invoke-CQHttpBot', 'Invoke-CQHttpAction')
+FunctionsToExport = @('Invoke-CQHttpBot')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -98,10 +98,10 @@ PrivateData = @{
         Tags = @('Bot', 'CQHttp', 'CoolQ', 'QQ')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/richardchien/cqhttp-powershell-sdk/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/richardchien/cqhttp-powershell-sdk'
 
         # A URL to an icon representing this module.
         # IconUri = ''

@@ -65,7 +65,7 @@ function Invoke-CQHttpBot
             {
                 try
                 {
-                    & $_[1] -Bot $bot -Context $event.Data
+                    & $_[1] $bot $event.Data
                 }
                 catch
                 {
