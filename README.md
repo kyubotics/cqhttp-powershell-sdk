@@ -1,4 +1,4 @@
-# cqhttp-powershell-sdk
+# CQHTTP PowerShell SDK
 
 写着玩儿的 CQHTTP PowerShell SDK，只支持单线程，只能同时处理一条消息，几乎不具有任何实际使用价值。不过其实如果只是想跑个极其简单的逻辑，还是可以用一下的。
 
