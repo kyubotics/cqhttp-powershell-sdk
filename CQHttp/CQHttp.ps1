@@ -2,6 +2,15 @@
 . "$PSScriptRoot\Json.ps1"
 . "$PSScriptRoot\DeepCopy.ps1"
 
+function DefaultEventCallback
+{
+    param (
+        [hashtable]$Bot,
+        [hashtable]$Ctx
+    )
+    Write-Host "Default callback!"
+}
+
 function Invoke-CQHttpBot
 {
     param (
@@ -10,7 +19,7 @@ function Invoke-CQHttpBot
 
         # Expected value: @( @("message", callbackBlock1), @("request.friend", callbackBlock2) )
         [Alias("EventHandlers")]
-        [array[]]$EventCallbacks = @()
+        [array[]]$EventCallbacks = @(, @("", $Function:DefaultEventCallback))
     )
 
     $url = "http://$Address/"

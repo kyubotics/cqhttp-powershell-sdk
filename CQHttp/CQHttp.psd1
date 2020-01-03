@@ -11,7 +11,7 @@
     RootModule        = 'CQHttp.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '0.0.2'
+    ModuleVersion     = '0.0.3'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -94,13 +94,13 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags       = @('Bot', 'CQHttp', 'CoolQ', 'QQ')
+            Tags       = @('Bot', 'CQHTTP', 'CoolQ', 'CQ', 'QQ')
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/richardchien/cqhttp-powershell-sdk/blob/master/LICENSE'
+            LicenseUri = 'https://github.com/cqmoe/cqhttp-powershell-sdk/blob/master/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/richardchien/cqhttp-powershell-sdk'
+            ProjectUri = 'https://github.com/cqmoe/cqhttp-powershell-sdk'
 
             # A URL to an icon representing this module.
             # IconUri = ''

@@ -36,6 +36,6 @@ $callbacks = @(
 )
 
 Invoke-CQHttpBot `
-    -ApiRoot "http://192.168.69.128:5700" `
-    -Address "+:8080" `
+    -ApiRoot "http://127.0.0.1:5700" `
+    -Address "127.0.0.1:8080" `
     -EventCallbacks $callbacks
