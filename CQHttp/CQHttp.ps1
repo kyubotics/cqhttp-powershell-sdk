@@ -37,7 +37,7 @@ function Invoke-CQHttpBot
         param (
             [Parameter(Mandatory = $true)]
             [string]$Action,
-            [hashtable]$Params = @{}
+            [hashtable]$Params = @{ }
         )
         return Invoke-CQHttpAction -Bot $bot -Action $Action -Params $Params
     }
@@ -139,7 +139,7 @@ function Receive-Event
             $eventName += ".$($payload.sub_type)"
         }
 
-        return @{Name = [string]$eventName; Data = [hashtable]$payload}
+        return @{Name = [string]$eventName; Data = [hashtable]$payload }
     }
 }
 
@@ -152,13 +152,13 @@ function Invoke-CQHttpAction
         [Parameter(Mandatory = $true)]
         [string]$Action,
 
-        [hashtable]$Params = @{}
+        [hashtable]$Params = @{ }
     )
 
     $url = "$($Bot.ApiRoot)/$Action"
     $body = [System.Text.Encoding]::UTF8.GetBytes(($Params | ConvertTo-Json))
-    return Invoke-WebRequest `
+    return Invoke-RestMethod `
         -Method Post -Uri $url `
         -ContentType "application/json; charset=utf-8" `
-        -Body $body | ConvertFrom-Json | Convert-PSObjectToHashtable
+        -Body $body | Convert-PSObjectToHashtable
 }

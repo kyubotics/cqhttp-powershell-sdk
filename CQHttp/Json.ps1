@@ -21,7 +21,7 @@ function Convert-PSObjectToHashtable
         }
         elseif ($InputObject -is [psobject])
         {
-            $hash = @{}
+            $hash = @{ }
 
             foreach ($property in $InputObject.PSObject.Properties)
             {

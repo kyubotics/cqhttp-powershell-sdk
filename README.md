@@ -1,6 +1,6 @@
 # CQHTTP PowerShell SDK
 
-写着玩儿的 CQHTTP PowerShell SDK，**目前同一时间只能处理一条消息**。
+使用 PowerShell 开发 CQHTTP 应用，**目前同一时间只能处理一条消息，请只使用本 SDK 做测试或娱乐用途，不要用于严肃的生产环境**。
 
 ## 安装
 

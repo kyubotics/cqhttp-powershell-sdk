@@ -31,7 +31,7 @@ $callbacks = @(
             param ($Bot, $Ctx)
             & $Bot.CallAction `
                 -Action "set_friend_add_request" `
-                -Params @{flag = $Ctx.flag; approve = $true}
+                -Params @{flag = $Ctx.flag; approve = $true }
         })
 )
 
