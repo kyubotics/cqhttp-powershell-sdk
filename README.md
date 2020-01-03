@@ -4,7 +4,7 @@
 
 ## 安装
 
-如果你的操作系统是 Windows 10、Windows Server 2016 或更高版本，或安装了 PowerShell 6，或手动安装了 [PowerShellGet](https://docs.microsoft.com/zh-cn/powershell/gallery/overview) 模块，可以运行下面命令安装或更新本 SDK：
+如果你的操作系统是 Windows 10、Windows Server 2016 或更高版本，或安装了 PowerShell 6，或手动安装了 [PowerShellGet](https://docs.microsoft.com/zh-cn/powershell/scripting/gallery/overview) 模块，可以运行下面命令安装或更新本 SDK：
 
 ```ps1
 Install-Module -Name CQHttp -Scope CurrentUser # 安装
